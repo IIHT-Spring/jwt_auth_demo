@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.jwt.helper.JwtUtil;
 import com.jwt.model.JwtRequest;
+import com.jwt.model.JwtResponse;
 import com.jwt.services.CustomUserDetailService;
 
 @RestController
@@ -45,6 +46,8 @@ public class JwtController {
 		System.out.println("JWT" + token);
 		
 		// we will send the object with the key token and the value of token
+		//{"token":"value"}
+		return ResponseEntity.ok(new JwtResponse(token));
 		
 	}
 
